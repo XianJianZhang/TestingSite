@@ -7,13 +7,15 @@
   {%else%}
     <title>Django project</title>
   {%endif%}
-</head>
-<body>
   <div>
     <p style="">BLOG</p>
     <a href="{%url 'blog-home' %}">Home | </a>
     <a href="{%url 'blog-about' %}">About page</a>
+    <h2>Your location: {{request.path}}</h2>
   </div>
+
+</head>
+<body>
   {%block content%}
   {%endblock content%}
 </body>
