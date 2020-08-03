@@ -1,4 +1,4 @@
 from django import forms
+from django.forms import UserCreationForm
 
-class SimpleForm(forms.Form):
-  name = forms.TextField(max_length=100)
+class SimpleForm(UserCreationForm):
