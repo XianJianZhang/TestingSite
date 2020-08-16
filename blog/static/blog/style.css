@@ -1,4 +1,30 @@
-h1 {
-    color: #009900;
-    font-family: "Arial";
+.nav-bar{
+  padding: 10px;
+  border: 1px solid black;
+  color: white;
+  max-width: 1500px;
+  height: 60px;
+  text-align: center;
+  background-color: rgba(0,100,200,0.5);
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+.left{
+ color: white;
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+}
+
+.main-object{
+  position:relative;
+  top: 40px;
+}
+
+.profile-pic{
+  height:100px;
+  width: 100px;
+}
+*{
+  box-sizing: border-box;
 }

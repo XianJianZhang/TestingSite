@@ -9,3 +9,6 @@ class Post(models.Model):
 
   def __str__(self):
     return(self.title + "\nID: " + str(self.pk))
+
+  def return_text(self):
+    return(self.content[:50])

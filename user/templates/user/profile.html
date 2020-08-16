@@ -1,0 +1,15 @@
+{% extends 'blog/base.html'%}
+{% block content%}
+  <section class="main-object">
+    <h1>{{user.username}}</h1>
+    <img class="profile-pic" src="{{user.profile.image.url}}">
+    <form method="POST" enctype="multipart/form-data">
+      {%csrf_token%}
+      <table>
+        {{u_form.as_table}}
+        {{p_form.as_table}}
+      </table>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+{% endblock content %}

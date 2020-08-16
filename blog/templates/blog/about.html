@@ -1,9 +1,52 @@
 {%extends "blog/base.html"%}
 {%block content%}
   <h1>Hello, this is a blog site!</h1>
-  <form method="GET" action="www.google.com/search">
-    {% csrf_token%}
-    <input type="Text">
-    <input type="submit" value="submit">
-  </form>
+  <main class="main-content">
+    <form method="POST">
+      {% csrf_token%}
+      <div id="doneness-meter">
+        <label for = 'doneness'>Doneness meter</label>
+        <br>
+        <span>Rare</span>
+        <input type="range" id="doneness" name="doneness" min="0" max="5" step="0.5">
+        <span>Welldone</span>
+      </div>
+      <div id="toppings">
+        <p> Toppings </p>
+        <label for="lettuce">Lettuce</label>
+        <input type="checkbox" name="toppings" value="lettuce" id="lettuce">
+        <label for="tomato">Tomato</label>
+        <input type="checkbox" value="tomato" name="toppings" id="checkbox">
+        <label for="onion">Onion</label>
+        <input type="checkbox" value="onion" name="toppings" id="onion">
+      </div>
+      <div id="radio-choice">
+        <p>Do you want cheese?</p>
+        <label for="yes">yes</label>
+        <input type="radio" name="choice" value="yes" id="yes">
+        <label for="no">no</label>
+        <input type="radio" name="choice" value="no" id="no">
+      </div>
+      <div id="select">
+        <label for="bun">Bun:</label>
+        <select id="bun" name="bun">
+          <option value="sesame">Sesame</option>
+          <option value="wheat">Wheat</option>
+        </select>
+      </div>
+      <div id="datalist">
+        <label for="address">Address</label>
+        <input type="text" id="address" name='address' list="address-list">
+        <datalist id="address-list">
+          <option value="florida">Florida</option>
+          <option value="new-york">New York</option>
+          <option value="california">California</option>
+        </datalist>
+      </div>
+      <br>
+      <p>Info:</p>
+      <textarea id="extra-info" name="extra-info">More Info?</textarea>
+      <input type="submit" name="submit" value="done">
+    </form>
+  </main>
 {%endblock content%}
